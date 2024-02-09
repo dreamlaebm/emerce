@@ -3,6 +3,7 @@ import { createJSONStorage, devtools, persist } from "zustand/middleware";
 import type {} from "@redux-devtools/extension"; // required for devtools typing
 import Product from "./abc/Product";
 import { useEffect } from "react";
+import { Chunk } from "./utils/chunk";
 
 interface GlobalState {
   products: [
@@ -13,6 +14,7 @@ interface GlobalState {
   ];
   addProduct: (id: string, product: Product) => void;
   getProduct: (id: string) => Product | null;
+  getPage: (page: number) => Array<{ id: string; product: Product }>;
 }
 
 // ah sabe pq eu acho que nao ta indo?
@@ -57,6 +59,13 @@ const globalPersist = persist<GlobalState>(
         return null;
       }
       return product_found[0].product;
+    },
+    getPage: (page) => {
+      let pages = Chunk(get().products, 10);
+      if (pages.length - 1 >= page) {
+        return pages[page];
+      }
+      return [];
     },
   }),
   {
