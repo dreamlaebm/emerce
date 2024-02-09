@@ -4,3 +4,8 @@ export default interface Product {
   imageURL: string;
   price: number;
 }
+
+export interface productInfo {
+  id: string;
+  product: Product;
+}

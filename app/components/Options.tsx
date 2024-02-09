@@ -40,8 +40,6 @@ export default function Options() {
       <div className="flex flex-col gap-2 md:w-2/12 lg:w-2/12 md:bg-commerce-blue md:h-full">
         <div className="p-4">
           <Option sub={false} name="Categories">
-            <Option sub={true} name="books"></Option>
-            <Option sub={true} name="Gym equipment"></Option>
             <Link href="https://www.laebm.com" className="w-full">
               <Option sub={true} name="Websites"></Option>
             </Link>

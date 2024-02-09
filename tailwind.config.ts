@@ -9,11 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'commerce-green': '#86E7B8',
-        'commerce-black': '#071E22',
-        'commerce-pink': '#B8336A',
-        'commerce-blue': '#5E7CE2',
-        'commerce-gray': '#8DA9C4'
+        "commerce-green": "#86E7B8",
+        "commerce-black": "#071E22",
+        "commerce-pink": "#B8336A",
+        "commerce-blue": "#5E7CE2",
+        "commerce-gray": "#8DA9C4",
+        "commerce-red": "#8D2C5B",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

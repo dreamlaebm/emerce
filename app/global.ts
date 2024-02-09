@@ -15,6 +15,7 @@ interface GlobalState {
   addProduct: (id: string, product: Product) => void;
   getProduct: (id: string) => Product | null;
   getPage: (page: number) => Array<{ id: string; product: Product }>;
+  removeProduct: (id: string) => void;
 }
 
 // ah sabe pq eu acho que nao ta indo?
@@ -25,6 +26,7 @@ interface GlobalState {
 // so q eu tava redirecionando errado
 //ai fode o bgl tlgd?
 
+//@ts-ignore
 const DEFAULT_PRODUCTS: [
   {
     id: string;
@@ -36,7 +38,208 @@ const DEFAULT_PRODUCTS: [
     product: {
       name: "batata doce",
       description: "let i be your uma",
-      imageURL: "",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
+      price: 2.0,
+    },
+  },
+  {
+    id: "test",
+    product: {
+      name: "batata doce",
+      description: "let i be your uma",
+      imageURL:
+        "https://midia.gruposinos.com.br/_midias/jpg/2023/08/04/800x500/1_batata_doce__1_-21114581.jpeg?ims=1200x/filters:quality(70)",
       price: 2.0,
     },
   },
@@ -67,10 +270,19 @@ const globalPersist = persist<GlobalState>(
       }
       return [];
     },
+    removeProduct: (id) => {
+      //bullshit
+      //@ts-ignore
+      let products: [{ id: string; product: Product }] = get().products.filter(
+        (x) => x.id !== id
+      );
+
+      set({ products: products });
+    },
   }),
   {
     name: "products",
-    storage: createJSONStorage(() => sessionStorage),
+    storage: createJSONStorage(() => localStorage),
   }
 );
 
