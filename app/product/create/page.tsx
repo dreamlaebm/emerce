@@ -1,30 +1,44 @@
 "use client";
 
 import Page from "@/app/layout/Page";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import uuid from "uuid4";
 import { useGlobal } from "@/app/global";
 import { useRouter } from "next/navigation";
+import { useAsyncEffect } from "@/app/utils/asyncer";
+import prisma from "@/lib/prisma";
+import { createProduct } from "@/app/actions";
 
 export default function CreateProductForm() {
-  const addProduct = useGlobal((state) => state.addProduct);
   const { push } = useRouter();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [price, setPrice] = useState(0);
+
+  const addProduct = async () => {
+        const product = await createProduct({
+          name,
+          description,
+          imageURL: image,
+          price
+        })
+        push(`/product/${product.id}`);
+
+  };
+
   const submit = (e: any) => {
     e.preventDefault();
     let id = uuid() + name.replaceAll(" ", "-");
 
-    addProduct(id, {
-      name: name,
-      description: description,
-      imageURL: image,
-      price: price,
-    });
+    // addProduct(id, {
+    //   name: name,
+    //   description: description,
+    //   imageURL: image,
+    //   price: price,
+    // });
 
-    push(`/product/${id}`);
+    addProduct()
   };
   return (
     <Page>
